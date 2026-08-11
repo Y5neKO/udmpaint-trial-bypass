@@ -6,6 +6,21 @@ CLIP STUDIO PAINT (Unicorn 学习版包装) 试用限制绕过研究项目。提
 
 `UDMPAINT.app` 为 CLIP STUDIO PAINT 4.0.5 (CELSYS) 套一层 Unicorn 自制激活器包装（bundle `xmunicorn.udongman.paint`）。本仓库分析了其试用/激活机制的三层判定，并提供绕过补丁。
 
+## 版本与环境（针对性声明）
+
+本补丁**针对性极强**，字节偏移仅适用于以下精确匹配的目标：
+
+| 项 | 值 |
+|---|---|
+| 应用 | CLIP STUDIO PAINT（Unicorn 包装） |
+| 版本 | 4.0.5 |
+| bundle id（主程序 / 激活器） | `xmunicorn.udongman.paint` / `xmunicorn.udongman.active` |
+| 架构 | arm64（Apple Silicon） |
+| 测试系统 | macOS 15.7.4 (Build 24G517)，Darwin 24.6.0 |
+| 测试日期 | 2026-08-11 |
+
+原版二进制 SHA256 校验值见 [docs/analysis.md](docs/analysis.md)。**不匹配则不可用。**
+
 ## 结构
 
 ```

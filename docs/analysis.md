@@ -1,8 +1,34 @@
 # UDMPAINT (CLIP STUDIO PAINT) 试用绕过 Patch 全记录
 
 > 目标：`/Applications/Unicorn/PAINT/UDMPAINT.app`
-> 平台：macOS arm64 | 逆向方法：静态反汇编(otool/nm) + lldb 动态验证
+> 逆向方法：静态反汇编(otool/nm) + lldb 动态验证
 > 日期：2026-08-11
+
+## 版本与环境声明（重要）
+
+本补丁**针对性极强**，下述全部字节偏移仅适用于以下**精确匹配**的目标。不同版本、不同构建、非 arm64 架构下所有偏移均无效。
+
+| 项 | 值 |
+|---|---|
+| 应用 | CLIP STUDIO PAINT（Unicorn 包装） |
+| 版本 | 4.0.5 |
+| bundle id（主程序） | `xmunicorn.udongman.paint` |
+| bundle id（激活器） | `xmunicorn.udongman.active` |
+| 架构 | arm64（Apple Silicon） |
+| 测试系统 | macOS 15.7.4 (Build 24G517) |
+| 内核 | Darwin 24.6.0 |
+| 测试日期 | 2026-08-11 |
+| 安装路径 | `/Applications/Unicorn/PAINT/UDMPAINT.app` |
+
+**原版二进制 SHA256（匹配校验）**：
+
+```text
+PaintActivation    f9798804753868a7f510c4415b0b07b264c2451ee3dbeed2d366b4b3d2b41859
+CLIP STUDIO PAINT  e1401d87dec684722081396b8b4dee9cfe79946d6c7bd464ca4e1ac7fb31d950
+```
+
+> 运行 `patch_udmpaint.sh apply` 前，请先对目标二进制计算 SHA256 与上表比对。
+> 不一致则放弃使用——patch 偏移对不上，强行应用只会损坏文件。
 
 ---
 
