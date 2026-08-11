@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# 临时/日志
+*.log
+*.tmp
+
+# 备份
+*.orig
+
+# IDE
+.idea/
+.vscode/
